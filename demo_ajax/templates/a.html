@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.js"></script>
+</head>
+<body>
+<div>
+    弹出
+    <button>提交</button>
+</div>
+<script>
+    $('button').click(function () {
+        $.get({% url 'b' %},function(data){
+            alert(data.u)
+        })
+    })
+</script>
+
+</body>
+</html>

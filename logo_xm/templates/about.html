@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block contest %}
+<main>
+    <div class="index-main-title">
+        <p>关于我们</p>
+        <span>为各大重型工业工厂所制造的环境问题提供相关处理净化设备</span>
+    </div>
+    <div class="index-main-md">
+        <div class="left-area">
+
+        </div>
+        <div class="right-area">
+            {% for about in about_list %}
+            <p>{{ about.name }}</p>
+            <span>{{ about.contest }}</span>
+            <div><img src="/{{ about.cover }}" alt=""></div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+    <div class="index-main-title">
+        <p>团队成员</p>
+        <span>为各大重型工业工厂所制造的环境问题提供相关处理净化设备</span>
+    </div>
+    <div class="index-main-md-body">
+        <ul>
+            {% for tag in tags_list %}
+
+            <li>
+                <div></div>
+                <p>{{ tag.post }}</p>
+                <p>{{ tag.name }}</p><span>{{ tag.contest }}</span></li>
+
+            {% endfor %}
+
+{#            <li>#}
+{#                <div></div>#}
+{#                <p>李美娜</p>#}
+{#                <p>工程师</p><span>保护环境是我们每个人的责任，环保是保持和发展生态平衡，扩大有用自然资源的再生产，协调人类与环境的关系。</span></li>#}
+{#            <li>#}
+{#                <div></div>#}
+{#                <p>保罗</p>#}
+{#                <p>环境测试员</p><span>保护环境是我们每个人的责任，环保是保持和发展生态平衡，扩大有用自然资源的再生产，协调人类与环境的关系。</span></li>#}
+        </ul>
+        <span>保护环境是我们每个人的责任，环保是保持和发展生态平衡，扩大有用自然资源的再生产，协调人类与环境的关系。</span>
+    </div>
+    <div class="index-main-title">
+        <p>核心业务</p>
+        <span>为各大重型工业工厂所制造的环境问题提供相关处理净化设备</span>
+
+    </div>
+
+    <div class="about-main-footer">
+        <span></span>
+    </div>
+
+    <div class="feature">
+        <img class="sm" src="/static/images/main5.jpg">
+    </div>
+</main>
+{% endblock contest %}

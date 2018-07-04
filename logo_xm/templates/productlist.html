@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block contest %}
+
+    <main>
+        <ul class="pro-body">
+            <li>
+                {% for foo in page %}
+                    <a href="{% url 'logo:particulars' foo.id %}">
+                        <img src="/{{ foo.cover }}" alt="">
+                        <div class="pro-rightarea">
+                            <p>{{ foo.name }}</p>
+                            <span>{% autoescape off %}
+                                {{ foo.contest | truncatechars_html:150 }}{% endautoescape %}</span>
+                        </div>
+                    </a>
+                {% endfor %}
+                {#            {% for foo in page %}#}
+                {#                {{ foo.name }}#}
+                {#            {% endfor %}#}
+                {#            {% for index in page.paginator.page_range %}#}
+                {#                <a href="{% url 'logo:particulars' index %}">{{ index }}</a>#}
+                {##}
+                {#            {% endfor %}#}
+
+
+            </li>
+            {#        <li>#}
+            {#            <a href="article_list_content.html">#}
+            {#            <img src="/static/images/smcase2.jpg" alt="">#}
+            {#            <div class="pro-rightarea">#}
+            {#                <p>宜昌市固体废弃物处理项目</p>#}
+            {#                <span>宜昌市化工有限公司是一家从事酸性染料研发、生产与销售的专业企业。我们为金化工有限公司提供系统化的整体解决方案，集中处理了酸性染料母液废水，日处理达到100吨。回收废水中的苯胺，实现资源化；合格后的废水达回用要求，实现零排放。金化工有限公司零排放的实施对促进酸性染料行业的污水规范化处理有深远影响，树立了行业的标杆。同时，也将金化工有限公司在行业的领先地位。</span>#}
+            {#            </div>#}
+            {#            </a>#}
+            {#        </li>#}
+            {#        <li>#}
+            {#            <a href="article_list_content.html">#}
+            {#            <img src="/static/images/smcase3.jpg" alt="">#}
+            {#            <div class="pro-rightarea">#}
+            {#                <p>江西污染土壤修复工程</p>#}
+            {#                <span>江西化工有限公司是一家从事酸性染料研发、生产与销售的专业企业。我们为金化工有限公司提供系统化的整体解决方案，集中处理了酸性染料母液废水，日处理达到100吨。回收废水中的苯胺，实现资源化；合格后的废水达回用要求，实现零排放。金化工有限公司零排放的实施对促进酸性染料行业的污水规范化处理有深远影响，树立了行业的标杆。同时，也将金化工有限公司在行业的领先地位。</span>#}
+            {#            </div>#}
+            {#            </a>#}
+            {#        </li>#}
+            {#        <li>#}
+            {#            <a href="article_list_content.html">#}
+            {#            <img src="/static/images/smcase3.jpg" alt="">#}
+            {#            <div class="pro-rightarea">#}
+            {#                <p>江西污染土壤修复工程</p>#}
+            {#                <span>江西化工有限公司是一家从事酸性染料研发、生产与销售的专业企业。我们为金化工有限公司提供系统化的整体解决方案，集中处理了酸性染料母液废水，日处理达到100吨。回收废水中的苯胺，实现资源化；合格后的废水达回用要求，实现零排放。金化工有限公司零排放的实施对促进酸性染料行业的污水规范化处理有深远影响，树立了行业的标杆。同时，也将金化工有限公司在行业的领先地位。</span>#}
+            {#            </div>#}
+            {#            </a>#}
+            {#        </li>#}
+            {#        <li>#}
+            {#            <a href="article_list_content.html">#}
+            {#            <img src="/static/images/smcase3.jpg" alt="">#}
+            {#            <div class="pro-rightarea">#}
+            {#                <p>江西污染土壤修复工程</p>#}
+            {#                <span>江西化工有限公司是一家从事酸性染料研发、生产与销售的专业企业。我们为金化工有限公司提供系统化的整体解决方案，集中处理了酸性染料母液废水，日处理达到100吨。回收废水中的苯胺，实现资源化；合格后的废水达回用要求，实现零排放。金化工有限公司零排放的实施对促进酸性染料行业的污水规范化处理有深远影响，树立了行业的标杆。同时，也将金化工有限公司在行业的领先地位。</span>#}
+            {#            </div>#}
+            {#            </a>#}
+            {#        </li>#}
+        </ul>
+        <div class="article_list_more_pages">
+            <ul>
+
+                {% for index in page.paginator.page_range %}
+                    <li><a href="/logo/project_case/{{ index }}">{{ index }}</a></li>
+                {% endfor %}
+
+
+            </ul>
+        </div>
+        <div class="feature">
+            <img class="sm" src="/static/images/main5.jpg">
+        </div>
+    </main>
+{% endblock contest %}

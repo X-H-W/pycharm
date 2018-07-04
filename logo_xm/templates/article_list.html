@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% block contest %}
+    <div>
+        <section class="article-content">
+            <div class="article-protect-tab">
+                <span><a href="{% url 'logo:project_case' 1 %}">新闻</a></span>
+                <span><a href="{% url 'logo:news' %}">环保知识</a></span>
+                <span><a href="{% url 'logo:news' %}">养生</a></span>
+
+            </div>
+            <div class="article-protect-body">
+                <img src="/static/images/pro1.jpg">
+                <ul>
+                    {% for case in case_list %}
+
+                        <li>
+                            <a href="{% url 'logo:xq' case.id %}">
+                                <h3>{{ case.c_name }}</h3>
+                                <span>{{ case.c_time }}</span>
+                            </a>
+                            <p>{% autoescape off %}{{ case.c_contest | truncatechars_html:100 }}{% endautoescape %}</p>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+        </section>
+        <section class="article-content">
+            <ul>
+                {% for know in knowledge_list %}
+                    <li>
+                        <div class="article-date">
+                            <strong></strong>
+                            <p>{{ know.date }}</p>
+
+                        </div>
+                        <div class="article-info">
+                            <a href="{% url 'logo:ys' know.id %}">
+                                <h3>{{ know.name }}</h3>
+                                <i class="font">&#xe6aa;</i>
+                                <p>{% autoescape off %}
+                                    {{ know.contest | truncatechars_html:200 }}{% endautoescape %}</p>
+                                <span>{{ know.date }}</span>
+                            </a>
+                        </div>
+                    </li>
+                {% endfor %}
+
+
+
+                {#            <li>#}
+                {#                <div class="article-date">#}
+                {#                    <strong>01</strong>#}
+                {#                    <p>2017/06</p>#}
+                {#                    #}
+                {#                </div>#}
+                {#                <div class="article-info">#}
+                {#                    <a href="article_list_content.html">#}
+                {#                        <h3>如何获得健康饮水</h3>#}
+                {#                        <i class="font">&#xe6aa;</i>#}
+                {#                        <p>随着生活水平的不断提高，大家对健康饮用水的关注度越来越高，但对如何获取健康饮用水，还会存有很多疑惑。近期开能环保将以“水博士”名义就相关问题进行...</p>#}
+                {#                        <span>2017/06/01</span>#}
+                {#                    </a>#}
+                {#                </div>#}
+                {#            </li>#}
+                {#            <li>#}
+                {#                <div class="article-date">#}
+                {#                    <strong>01</strong>#}
+                {#                    <p>2017/06</p>#}
+                {#                    #}
+                {#                </div>#}
+                {#                <div class="article-info">#}
+                {#                    <a href="article_list_content.html">#}
+                {#                        <h3>如何获得健康饮水</h3>#}
+                {#                        <i class="font">&#xe6aa;</i>#}
+                {#                        <p>随着生活水平的不断提高，大家对健康饮用水的关注度越来越高，但对如何获取健康饮用水，还会存有很多疑惑。近期开能环保将以“水博士”名义就相关问题进行...</p>#}
+                {#                        <span>2017/06/01</span>#}
+                {#                    </a>#}
+                {#                </div>#}
+                {#            </li>#}
+                {#            <li>#}
+                {#                <div class="article-date">#}
+                {#                    <strong>01</strong>#}
+                {#                    <p>2017/06</p>#}
+                {#                    #}
+                {#                </div>#}
+                {#                <div class="article-info">#}
+                {#                    <a href="article_list_content.html">#}
+                {#                        <h3>如何获得健康饮水</h3>#}
+                {#                        <i class="font">&#xe6aa;</i>#}
+                {#                        <p>随着生活水平的不断提高，大家对健康饮用水的关注度越来越高，但对如何获取健康饮用水，还会存有很多疑惑。近期开能环保将以“水博士”名义就相关问题进行...</p>#}
+                {#                        <span>2017/06/01</span>#}
+                {#                    </a>#}
+                {#                </div>#}
+                {#            </li>#}
+                {#            <li>#}
+                {#                <div class="article-date">#}
+                {#                    <strong>01</strong>#}
+                {#                    <p>2017/06</p>#}
+                {#                    #}
+                {#                </div>#}
+                {#                <div class="article-info">#}
+                {#                    <a href="article_list_content.html">#}
+                {#                        <h3>如何获得健康饮水</h3>#}
+                {#                        <i class="font">&#xe6aa;</i>#}
+                {#                        <p>随着生活水平的不断提高，大家对健康饮用水的关注度越来越高，但对如何获取健康饮用水，还会存有很多疑惑。近期开能环保将以“水博士”名义就相关问题进行...</p>#}
+                {#                        <span>2017/06/01</span>#}
+                {#                    </a>#}
+                {#                </div>#}
+                {#            </li>#}
+                {#            <li>#}
+                {#                <div class="article-date">#}
+                {#                    <strong>01</strong>#}
+                {#                    <p>2017/06</p>#}
+                {#                    #}
+                {#                </div>#}
+                {#                <div class="article-info">#}
+                {#                    <a href="article_list_content.html">#}
+                {#                        <h3>如何获得健康饮水</h3>#}
+                {#                        <i class="font">&#xe6aa;</i>#}
+                {#                        <p>随着生活水平的不断提高，大家对健康饮用水的关注度越来越高，但对如何获取健康饮用水，还会存有很多疑惑。近期开能环保将以“水博士”名义就相关问题进行...</p>#}
+                {#                        <span>2017/06/01</span>#}
+                {#                    </a>#}
+                {#                </div>#}
+                {#            </li>#}
+            </ul>
+        </section>
+        {#    <div class="article_list_more_pages">#}
+        {#        <ul>#}
+        {#            <li><a>上一页</a></li>#}
+        {#            <li class="article-current"><a>1</a></li>#}
+        {#            <li><a>2</a></li>#}
+        {#            <li><a>3</a></li>#}
+        {#            <li><a>下一页</a></li>#}
+        {#        </ul>#}
+        {#    </div>#}
+        <div class="feature">
+            <img class="sm" src="/static/images/main5.jpg">
+        </div>
+    </div>
+{% endblock contest %}

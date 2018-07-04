@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for h in page %}
+    {{ h.hname }}
+    <br>
+{% endfor %}
+<hr>
+{% for i in page.paginator.page_range %}
+    <a href="{% url 'index' i %}">{{ i }}</a>
+{% endfor %}
+</body>
+</html>

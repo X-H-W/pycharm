@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.js"></script>
+
+</head>
+<body>
+<div id="div1">
+    弹出弹窗
+    <button>get请求</button>
+
+</div>
+<script>
+    $('button').click(function () {
+        {#alert('老司机带带我,我要去月球')#}
+        $.get('{% url "home_page:getdata" %}',function(data) {
+            alert(data.u)
+        })
+    })
+</script>
+
+</body>
+</html>

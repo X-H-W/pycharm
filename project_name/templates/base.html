@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}默认标题名字{% endblock %}</title>
+
+</head>
+<body>
+{% include 'nav.html' %}
+
+{% block content %}
+    省略  ...................................................
+{% endblock %}
+
+{% include 'bottom.html' %}
+
+</body>
+</html>

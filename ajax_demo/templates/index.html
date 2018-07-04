@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.js"></script>
+
+</head>
+<body>
+a:<input type="text" id="a"><br>
+b:<input type="text" id="b"><br>
+<buttton>按钮</buttton>
+<hr>
+结果是:<h1></h1>
+<script>
+    {#$('button').click(#}
+    {#    function () {#}
+    {#        var a = $('#a').val();#}
+    {#        var b = $('#b').val();#}
+            {#$.get('{% url "app1:ger_handle" %}',{key1:a,key2:b}),#}
+            {#    function () {#}
+            {#        alert(data.u2)#}
+            {#        $('h1').html(data.u1)#}
+            {#    }#}
+    {#        $.ajax({#}
+    {#            type:'GET',#}
+    {#            url:"{% url 'app1:ger_handle' %}",#}
+    {#            data:{key1:a,key2:b}#}
+    {#        }).done(function (data) {#}
+    {#            $('h1').html(data.u2)#}
+    {#        })#}
+    {##}
+    {##}
+    {#    }#}
+    {#)#}
+
+</script>
+
+</body>
+</html>
